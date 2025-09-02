@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ShoeCare - Register</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('./images/pexels-mikael-blomkvist-6476588.jpg') no-repeat center center/cover;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.65);
+      z-index: 0;
+    }
+
+    .navbar {
+      z-index: 2;
+      position: relative;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes glow {
+      0% { box-shadow: 0 0 5px #0d6efd, 0 0 10px #0d6efd; }
+      50% { box-shadow: 0 0 20px #0d6efd, 0 0 40px #0d6efd; }
+      100% { box-shadow: 0 0 5px #0d6efd, 0 0 10px #0d6efd; }
+    }
+
+    .form-container {
+      background: rgba(255, 255, 255, 0.97);
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      max-width: 750px;
+      width: 100%;
+      margin: 90px auto 50px;
+      position: relative;
+      z-index: 1;
+      animation: fadeInUp 1s ease-in-out;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #0d6efd;
+      font-weight: 800;
+      letter-spacing: 1px;
+      animation: fadeInUp 1.2s ease-in-out;
+    }
+
+    .form-label {
+      font-weight: 600;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 8px rgba(13,110,253,0.5);
+      transition: 0.3s;
+    }
+
+    .btn-dark {
+      border-radius: 50px;
+      padding: 12px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: transform 0.2s, background 0.3s;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+    .btn-dark:hover {
+      transform: scale(1.05);
+      background: #0d6efd;
+      color: #fff;
+      animation: glow 1.5s infinite alternate;
+    }
+
+    .form-check-label.btn {
+      cursor: pointer;
+    }
+    .form-check-input:checked + .form-check-label {
+      background-color: #0d6efd !important;
+      color: #fff !important;
+      border-color: #0d6efd !important;
+    }
+
+    footer {
+      margin-top: auto;
+      z-index: 1;
+      position: relative;
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html"><i class="fa-solid fa-shoe-prints me-2"></i>ShoeCare</a>
+    </div>
+  </nav>
+
+  <!-- Register Form -->
+  <div class="container py-5">
+    <form class="form-container">
+      <h1>Create Your Account</h1>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Full Name</label>
+          <input type="text" class="form-control" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" required>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Phone Number</label>
+          <input type="tel" class="form-control" placeholder="+91 98765 43210" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Gender</label>
+          <select class="form-select" required>
+            <option value="">Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Shoe Size</label>
+          <select class="form-select" required>
+            <option value="">Select Size</option>
+            <option>6</option><option>7</option><option>8</option><option>9</option>
+            <option>10</option><option>11</option><option>12</option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Favorite Shoe Types</label>
+          <div class="d-flex flex-wrap gap-2 mt-2">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input d-none" type="checkbox" id="sneakers" value="Sneakers">
+              <label class="form-check-label btn btn-outline-primary btn-sm" for="sneakers">Sneakers</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input d-none" type="checkbox" id="formal" value="Formal">
+              <label class="form-check-label btn btn-outline-success btn-sm" for="formal">Formal</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input d-none" type="checkbox" id="sports" value="Sports">
+              <label class="form-check-label btn btn-outline-warning btn-sm" for="sports">Sports</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input d-none" type="checkbox" id="boots" value="Boots">
+              <label class="form-check-label btn btn-outline-danger btn-sm" for="boots">Boots</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input d-none" type="checkbox" id="sandals" value="Sandals">
+              <label class="form-check-label btn btn-outline-info btn-sm" for="sandals">Sandals</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h5 class="mt-4">Location Details</h5>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Street Address</label>
+          <input type="text" class="form-control" placeholder="123, Main Street" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">City</label>
+          <input type="text" class="form-control" placeholder="Jaipur / Mumbai" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <label class="form-label">State</label>
+          <input type="text" class="form-control" placeholder="Rajasthan / Maharashtra" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Pincode</label>
+          <input type="number" class="form-control" placeholder="302001" required>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Landmark</label>
+          <input type="text" class="form-control" placeholder="Near City Mall">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" class="form-control" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label">Confirm Password</label>
+          <input type="password" class="form-control" required>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-dark w-100">Register</button>
+      <div class="text-center mt-3">
+        Already have an account? <a href="login.html" class="fw-bold text-decoration-none">Login</a>
+      </div>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 ShoeCare | All Rights Reserved</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
